@@ -1,9 +1,14 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { GifListComponent } from "../../components/gif-list/gif-list.component";
+import { GifsService } from '../../services/gifsService.service';
 
 @Component({
   selector: 'app-trending-page',
-  imports: [],
+  imports: [GifListComponent],
   templateUrl: './trending-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export default class TrendingPageComponent { }
+export default class TrendingPageComponent {
+
+  gifService=inject(GifsService)
+ }
